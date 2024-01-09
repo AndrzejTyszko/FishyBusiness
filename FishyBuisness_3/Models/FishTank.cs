@@ -8,6 +8,6 @@
         public int Capacity { get; set; }
         public int EnvironmentId {  get; set; }
 
-        public Environment Environment{ get; set; }
+        public Environment? Environment{ get; set; }
     }
 }

@@ -9,12 +9,12 @@
         public int EnvironmentId {  get; set; }
 
         // Klucz obcy do modelu Product
-        public Fish Fish { get; set; }
+        public Fish? Fish { get; set; }
 
         // Klucz obcy do modelu Warehouse
-        public FishTank FishTank { get; set; }
+        public FishTank? FishTank { get; set; }
 
-        public Environment Environment { get; set; }
+        public Environment? Environment { get; set; }
 
     }
 
