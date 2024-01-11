@@ -10,6 +10,9 @@ using FishyBuisness_3.Models;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Microsoft.AspNetCore.Mvc.Localization;
 
+
+
+
 namespace FishyBuisness_3.Controllers
 {
     public class FishController : Controller
@@ -24,7 +27,7 @@ namespace FishyBuisness_3.Controllers
         }
 
         // GET: Fish
-        public async Task<IActionResult> Index(string Sorting_Order)
+        public async Task<IActionResult> Index(string Sorting_Order,string searchString)
         {
             ViewBag.SortingName = String.IsNullOrEmpty(Sorting_Order) ? "FishNameDesc" : "";
             ViewBag.SortingPrice = Sorting_Order == "PriceAsc" ? "PriceDsc" : "PriceAsc";
@@ -45,6 +48,10 @@ namespace FishyBuisness_3.Controllers
                     fish = fish.OrderBy(f => f.FishName);
                     break;
                     
+            }
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                fish = fish.Where(s => s.FishName.Contains(searchString));
             }
             ViewData["FishName"] = _localizer["FishName"];
             return View(await fish.ToListAsync());

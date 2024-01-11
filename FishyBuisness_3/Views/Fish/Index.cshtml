@@ -1,5 +1,6 @@
 ﻿@model IEnumerable<FishyBuisness_3.Models.Fish>
 @inject Microsoft.AspNetCore.Mvc.Localization.IViewLocalizer localizer
+@using PagedList.Mvc;
 @{
     ViewData["Title"] = "Index";
 }
@@ -9,7 +10,13 @@
 <p>
     <a asp-action="Create">Create New</a>
 </p>
-
+@using (Html.BeginForm())
+{
+    <p>
+        Search Name: @Html.TextBox("SearchString", ViewBag.FilterValue as string)
+        <input type="submit" value="Find" />
+    </p>
+}
 <table class="table">
     <thead>
         <tr>
@@ -68,9 +75,9 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Weight)
             </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Price)
-            </td>
+                <td>
+                    $@Html.DisplayFor(modelItem => item.Price)
+                </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Environment.Name)
             </td>
@@ -83,3 +90,4 @@
 }
     </tbody>
 </table>
+<br />

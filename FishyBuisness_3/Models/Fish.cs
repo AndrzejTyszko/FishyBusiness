@@ -39,6 +39,7 @@ namespace FishyBuisness_3.Models
         //	[Required]
         //	[Range(0, 100000, ErrorMessage = "Can not be less than 0.1 and more than 100000")]
         [DisplayName("Price")]
+      
         public double Price { get; set; }
 
         public Environment? Environment{ get; set; }

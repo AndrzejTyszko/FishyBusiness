@@ -1,6 +1,7 @@
 ﻿using FishyBuisness_3.Models;
 using System;
 
+
 namespace FishyBuisness_3.Data
 {
     public class AppDbInitializer
