@@ -1,5 +1,5 @@
 ﻿@model IEnumerable<FishyBuisness_3.Models.Fish>
-
+@inject Microsoft.AspNetCore.Mvc.Localization.IViewLocalizer localizer
 @{
     ViewData["Title"] = "Index";
 }
@@ -14,7 +14,11 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.FishName)
+                @*Html.ActionLink("First Name", "Index", new { Sorting_Order = ViewBag.SortingName })*@
+                @* @Html.DisplayNameFor(model => model.FishName)*@    
+                <a asp-action="Index" asp-route-Sorting_Order="@ViewBag.SortingName">
+                    @localizer["FirstName"]
+                </a>
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.FishDescription)
@@ -32,7 +36,10 @@
                 @Html.DisplayNameFor(model => model.Weight)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Price)
+                <a asp-action="Index" asp-route-Sorting_Order="@ViewBag.SortingPrice">
+                    @localizer["Price"]
+                </a>
+                @*Html.DisplayNameFor(model => model.Price)*@
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Environment)
@@ -65,7 +72,7 @@
                 @Html.DisplayFor(modelItem => item.Price)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Environment.EnvironmentId)
+                @Html.DisplayFor(modelItem => item.Environment.Name)
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.FishId">Edit</a> |

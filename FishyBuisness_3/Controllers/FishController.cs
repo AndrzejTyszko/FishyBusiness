@@ -7,23 +7,47 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using FishyBuisness_3.Data;
 using FishyBuisness_3.Models;
+using Microsoft.CodeAnalysis.CSharp.Syntax;
+using Microsoft.AspNetCore.Mvc.Localization;
 
 namespace FishyBuisness_3.Controllers
 {
     public class FishController : Controller
     {
         private readonly ApplicationDbContext _context;
+        private IHtmlLocalizer<HomeController> _localizer;
 
-        public FishController(ApplicationDbContext context)
+        public FishController(ApplicationDbContext context, IHtmlLocalizer<HomeController> localizer)
         {
             _context = context;
+            _localizer = localizer;
         }
 
         // GET: Fish
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string Sorting_Order)
         {
-            var applicationDbContext = _context.Fish.Include(f => f.Environment);
-            return View(await applicationDbContext.ToListAsync());
+            ViewBag.SortingName = String.IsNullOrEmpty(Sorting_Order) ? "FishNameDesc" : "";
+            ViewBag.SortingPrice = Sorting_Order == "PriceAsc" ? "PriceDsc" : "PriceAsc";
+            var fish = from f in _context.Fish.Include(f => f.Environment)
+                       select f;
+            switch (Sorting_Order)
+            {
+                case "FishNameDesc":
+                    fish = fish.OrderByDescending(f => f.FishName);
+                    break;
+                case "PriceDsc":
+                    fish = fish.OrderByDescending(f =>f.Price);
+                    break;
+                case "PriceAsc":
+                    fish = fish.OrderBy(f => f.Price);
+                    break;
+                default:
+                    fish = fish.OrderBy(f => f.FishName);
+                    break;
+                    
+            }
+            ViewData["FishName"] = _localizer["FishName"];
+            return View(await fish.ToListAsync());
         }
 
         // GET: Fish/Details/5
@@ -49,7 +73,7 @@ namespace FishyBuisness_3.Controllers
         [HttpGet]
         public IActionResult Create()
         {
-            ViewData["EnvironmentId"] = new SelectList(_context.Environments, "EnvironmentId", "EnvironmentId");
+            ViewData["EnvironmentId"] = new SelectList(_context.Environments, "EnvironmentId", "Name");
             return View();
         }
 
@@ -66,7 +90,7 @@ namespace FishyBuisness_3.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["EnvironmentId"] = new SelectList(_context.Environments, "EnvironmentId", "EnvironmentId", fish.EnvironmentId);
+            ViewData["EnvironmentId"] = new SelectList(_context.Environments, "EnvironmentId", "Name", fish.EnvironmentId);
             return View(fish);
         }
 
@@ -83,7 +107,7 @@ namespace FishyBuisness_3.Controllers
             {
                 return NotFound();
             }
-            ViewData["EnvironmentId"] = new SelectList(_context.Environments, "EnvironmentId", "EnvironmentId", fish.EnvironmentId);
+            ViewData["EnvironmentId"] = new SelectList(_context.Environments, "EnvironmentId", "Name", fish.EnvironmentId);
             return View(fish);
         }
 
@@ -119,7 +143,7 @@ namespace FishyBuisness_3.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["EnvironmentId"] = new SelectList(_context.Environments, "EnvironmentId", "EnvironmentId", fish.EnvironmentId);
+            ViewData["EnvironmentId"] = new SelectList(_context.Environments, "EnvironmentId", "Name", fish.EnvironmentId);
             return View(fish);
         }
 
@@ -156,6 +180,22 @@ namespace FishyBuisness_3.Controllers
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         private bool FishExists(int id)
         {

@@ -50,9 +50,9 @@ namespace FishyBuisness_3.Controllers
         // GET: Stocks/Create
         public IActionResult Create()
         {
-            ViewData["EnvironmentId"] = new SelectList(_context.Environments, "EnvironmentId", "EnvironmentId");
+            ViewData["EnvironmentId"] = new SelectList(_context.Environments, "EnvironmentId", "Name");
             ViewData["FishId"] = new SelectList(_context.Fish, "FishId", "FishName");
-            ViewData["FishTankId"] = new SelectList(_context.FishTanks, "FishTankId", "FishTankId");
+            ViewData["FishTankId"] = new SelectList(_context.FishTanks, "FishTankId", "Name");
             return View();
         }
 
@@ -69,9 +69,9 @@ namespace FishyBuisness_3.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["EnvironmentId"] = new SelectList(_context.Environments, "EnvironmentId", "EnvironmentId", stock.EnvironmentId);
+            ViewData["EnvironmentId"] = new SelectList(_context.Environments, "EnvironmentId", "Name", stock.EnvironmentId);
             ViewData["FishId"] = new SelectList(_context.Fish, "FishId", "FishName", stock.FishId);
-            ViewData["FishTankId"] = new SelectList(_context.FishTanks, "FishTankId", "FishTankId", stock.FishTankId);
+            ViewData["FishTankId"] = new SelectList(_context.FishTanks, "FishTankId", "Name", stock.FishTankId);
             return View(stock);
         }
 
@@ -88,9 +88,9 @@ namespace FishyBuisness_3.Controllers
             {
                 return NotFound();
             }
-            ViewData["EnvironmentId"] = new SelectList(_context.Environments, "EnvironmentId", "EnvironmentId", stock.EnvironmentId);
+            ViewData["EnvironmentId"] = new SelectList(_context.Environments, "EnvironmentId", "Name", stock.EnvironmentId);
             ViewData["FishId"] = new SelectList(_context.Fish, "FishId", "FishName", stock.FishId);
-            ViewData["FishTankId"] = new SelectList(_context.FishTanks, "FishTankId", "FishTankId", stock.FishTankId);
+            ViewData["FishTankId"] = new SelectList(_context.FishTanks, "FishTankId", "Name", stock.FishTankId);
             return View(stock);
         }
 
@@ -126,9 +126,9 @@ namespace FishyBuisness_3.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["EnvironmentId"] = new SelectList(_context.Environments, "EnvironmentId", "EnvironmentId", stock.EnvironmentId);
+            ViewData["EnvironmentId"] = new SelectList(_context.Environments, "EnvironmentId", "Name", stock.EnvironmentId);
             ViewData["FishId"] = new SelectList(_context.Fish, "FishId", "FishName", stock.FishId);
-            ViewData["FishTankId"] = new SelectList(_context.FishTanks, "FishTankId", "FishTankId", stock.FishTankId);
+            ViewData["FishTankId"] = new SelectList(_context.FishTanks, "FishTankId", "Name", stock.FishTankId);
             return View(stock);
         }
 
@@ -173,7 +173,7 @@ namespace FishyBuisness_3.Controllers
             return _context.Stocks.Any(e => e.StockId == id);
         }
      
-     
-
     }
+
+
 }

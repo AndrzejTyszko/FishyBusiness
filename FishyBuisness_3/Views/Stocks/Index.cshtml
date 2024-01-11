@@ -37,15 +37,16 @@
                 @Html.DisplayFor(modelItem => item.Fish.FishName)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.FishTank.FishTankId)
+                @Html.DisplayFor(modelItem => item.FishTank.Name)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Environment.EnvironmentId)
+                @Html.DisplayFor(modelItem => item.Environment.Name)
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.StockId">Edit</a> |
                 <a asp-action="Details" asp-route-id="@item.StockId">Details</a> |
                 <a asp-action="Delete" asp-route-id="@item.StockId">Delete</a> |
+                    <a asp-action="Transfer" asp-route-id="@item.StockId">Transfer</a> |
             </td>
         </tr>
 

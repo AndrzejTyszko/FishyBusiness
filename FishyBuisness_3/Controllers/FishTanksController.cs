@@ -48,7 +48,7 @@ namespace FishyBuisness_3.Controllers
         // GET: FishTanks/Create
         public IActionResult Create()
         {
-            ViewData["EnvironmentId"] = new SelectList(_context.Environments, "EnvironmentId", "EnvironmentId");
+            ViewData["EnvironmentId"] = new SelectList(_context.Environments, "EnvironmentId", "Name");
             return View();
         }
 
@@ -65,7 +65,7 @@ namespace FishyBuisness_3.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["EnvironmentId"] = new SelectList(_context.Environments, "EnvironmentId", "EnvironmentId", fishTank.EnvironmentId);
+            ViewData["EnvironmentId"] = new SelectList(_context.Environments, "EnvironmentId", "Name", fishTank.EnvironmentId);
             return View(fishTank);
         }
 
@@ -82,7 +82,7 @@ namespace FishyBuisness_3.Controllers
             {
                 return NotFound();
             }
-            ViewData["EnvironmentId"] = new SelectList(_context.Environments, "EnvironmentId", "EnvironmentId", fishTank.EnvironmentId);
+            ViewData["EnvironmentId"] = new SelectList(_context.Environments, "EnvironmentId", "Name", fishTank.EnvironmentId);
             return View(fishTank);
         }
 
@@ -118,7 +118,7 @@ namespace FishyBuisness_3.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["EnvironmentId"] = new SelectList(_context.Environments, "EnvironmentId", "EnvironmentId", fishTank.EnvironmentId);
+            ViewData["EnvironmentId"] = new SelectList(_context.Environments, "EnvironmentId", "Name", fishTank.EnvironmentId);
             return View(fishTank);
         }
 

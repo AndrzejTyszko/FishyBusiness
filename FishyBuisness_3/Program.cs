@@ -21,7 +21,7 @@ builder.Services.AddControllersWithViews();
 
 //Localization
 
-builder.Services.AddLocalization(options => options.ResourcesPath="Rescoures");
+builder.Services.AddLocalization(options => options.ResourcesPath= "Rescoures");
 builder.Services.AddMvc()
 	.AddViewLocalization(Microsoft.AspNetCore.Mvc.Razor.LanguageViewLocationExpanderFormat.Suffix)
 	.AddDataAnnotationsLocalization();
