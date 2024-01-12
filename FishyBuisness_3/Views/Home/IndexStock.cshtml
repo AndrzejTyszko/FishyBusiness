@@ -1,26 +1,10 @@
 ﻿@model IEnumerable<FishyBuisness_3.Models.Fish>
 @inject Microsoft.AspNetCore.Mvc.Localization.IViewLocalizer localizer
-@using BootstrapIcons;
 @{
     ViewData["Title"] = "Fish List";
 }
-<style>
-    table {
-        border-collapse: collapse;
-        width: 100%;
-    }
 
-    th, td {
-        border: 2px solid #000; /* Grubość 2px, kolor czarny (zmień według potrzeb) */
-        padding: 8px; /* Dodatkowy padding dla lepszego wyglądu */
-        text-align: left; /* Ustawienie tekstu do lewej strony */
-        background-color: #00bcd4;
-        border-bottom: 2px solid #000;
-    }
-
-</style>
-
-<h1 class="mb-4">@localizer["FishList"]</h1>
+<h1 class="mb-4">@localizer["Fish List"]</h1>
 
 <div class="mb-4">
     <a asp-action="Create" class="btn btn-success">Create New</a>
@@ -29,7 +13,7 @@
 @using (Html.BeginForm())
 {
     <div class="mb-4">
-        <label class="form-label">@localizer["SearchName"]:</label>
+        <label class="form-label">@localizer["Search Name"]:</label>
         <div class="input-group">
             @Html.TextBox("SearchString", ViewBag.FilterValue as string, new { @class = "form-control" })
             <button type="submit" class="btn btn-primary">@localizer["Find"]</button>
@@ -42,16 +26,8 @@
         <thead class="thead-dark">
             <tr>
                 <th>
-                    <a asp-action="Index" asp-route-Sorting_Order="@ViewBag.SortingName" class="text-dark text-decoration-none">
-                        <span>@localizer["FishName"]</span>
-                        @if (ViewBag.SortingName == "FishNameDesc")
-                        {
-                            <i class="bi bi-arrow-down"></i>
-                        }
-                        else
-                        {
-                            <i class="bi bi-arrow-up"></i>
-                        }
+                    <a asp-action="Index" asp-route-Sorting_Order="@ViewBag.SortingName" class="text-light text-decoration-none">
+                        @localizer["FishName"]
                     </a>
                 </th>
                 <th>@localizer["Description"]</th>
@@ -61,19 +37,13 @@
                 <th>@localizer["Weight"]</th>
                 <th>
                     <a asp-action="Index" asp-route-Sorting_Order="@ViewBag.SortingPrice" class="text-dark text-decoration-none">
-                        @localizer["Price"]
-                        @if (ViewBag.SortingPrice == "PriceAsc")
-                        {
-                            <i class="bi bi-arrow-up"></i>
-                        }
-                        else
-                        {
-                            <i class="bi bi-arrow-down"></i>
-                        }
+                        <a asp-action="Index" asp-route-Sorting_Order="@ViewBag.SortingPrice" class="text-dark text-decoration-none my-custom-link">SortingMoney</a>
+
+                        @localizer["Price"].Value
                     </a>
                 </th>
                 <th>@localizer["Environment"]</th>
-                <th>@localizer["Options"]</th>
+                <th></th>
             </tr>
         </thead>
         <tbody>
