@@ -138,6 +138,9 @@
   <data name="Find" xml:space="preserve">
     <value>Find</value>
   </data>
+  <data name="FishDescription" xml:space="preserve">
+    <value>Fish Description</value>
+  </data>
   <data name="FishList" xml:space="preserve">
     <value>Fishpedia</value>
   </data>

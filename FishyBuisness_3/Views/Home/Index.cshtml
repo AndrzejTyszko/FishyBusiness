@@ -21,22 +21,27 @@
     }
 
           table {
+        font-family: 'Montserrat', sans-serif;
             width: 100%;
             border-collapse: collapse;
             margin-top: 20px;
-        background-color: #fff;
+            margin-inline: 2px;
+        background-color: white;
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
             border-radius: 8px;
             overflow: hidden;
             opacity: 0.95;
             transform: scale(0.95);
             animation: table-entrance 1s ease-out forwards;
+
         }
 
         td.price{
-        color: #1ee294
+        color: #1ee294;
         }
-
+  
+        
+  
 
 </style>
 
@@ -80,8 +85,8 @@
             <tr>
                 <td colspan="5"></td> 
                 <td><strong>@localizer["TotalValue"]:</strong></td>
-                <td></td> 
-                <td class="price"><strong>$@(group.Sum(s => s.Fish.Price * s.Quantity))</strong></td>
+                <td></td>
+                <td class="price"><strong>$@(Math.Round(group.Sum(s => s.Fish.Price * s.Quantity), 2))</strong></td>
             </tr>
         }
     </tbody>
