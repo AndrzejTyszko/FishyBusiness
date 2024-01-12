@@ -7,7 +7,7 @@
 <style>
     table {
         border-collapse: collapse;
-        width: 100%;
+        width: fit-content;
     }
 
     th, td {
@@ -16,6 +16,7 @@
         text-align: left; /* Ustawienie tekstu do lewej strony */
         background-color: #00bcd4;
         border-bottom: 2px solid #000;
+        width: fit-content;
     }
 
 </style>
@@ -43,14 +44,14 @@
             <tr>
                 <th>
                     <a asp-action="Index" asp-route-Sorting_Order="@ViewBag.SortingName" class="text-dark text-decoration-none">
-                        <span>@localizer["FishName"]</span>
+
                         @if (ViewBag.SortingName == "FishNameDesc")
                         {
-                            <i class="bi bi-arrow-down"></i>
+                            <span>@localizer["FishName"]</span><i class="bi bi-arrow-down"></i>
                         }
                         else
                         {
-                            <i class="bi bi-arrow-up"></i>
+                            <span>@localizer["FishName"]</span><i class="bi bi-arrow-up"></i>
                         }
                     </a>
                 </th>
@@ -61,14 +62,15 @@
                 <th>@localizer["Weight"]</th>
                 <th>
                     <a asp-action="Index" asp-route-Sorting_Order="@ViewBag.SortingPrice" class="text-dark text-decoration-none">
-                        @localizer["Price"]
                         @if (ViewBag.SortingPrice == "PriceAsc")
                         {
-                            <i class="bi bi-arrow-up"></i>
+
+
+                            <span>@localizer["Price"]</span> <i class="bi bi-arrow-up"></i>
                         }
                         else
                         {
-                            <i class="bi bi-arrow-down"></i>
+                            <span>@localizer["Price"]</span><i class="bi bi-arrow-down"></i>
                         }
                     </a>
                 </th>
