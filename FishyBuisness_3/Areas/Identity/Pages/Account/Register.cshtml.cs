@@ -117,7 +117,7 @@ namespace FishyBuisness_3.Areas.Identity.Pages.Account
             [Required]
             public string? Role { get; set; }
 
-            [ValidateNever] //Turn off validation on that
+            [ValidateNever] //Turn off validation
 
             public IEnumerable<SelectListItem> RoleList { get; set; }
 

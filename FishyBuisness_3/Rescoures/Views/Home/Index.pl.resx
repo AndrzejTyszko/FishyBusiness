@@ -117,7 +117,76 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Welcome" xml:space="preserve">
-    <value>Witaj 2</value>
+  <data name="BackToList" xml:space="preserve">
+    <value>Powrót do listy</value>
+  </data>
+  <data name="Delete" xml:space="preserve">
+    <value>Usuń</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>Opis</value>
+  </data>
+  <data name="Details" xml:space="preserve">
+    <value>Szczegóły</value>
+  </data>
+  <data name="Edit" xml:space="preserve">
+    <value>Edytuj</value>
+  </data>
+  <data name="Environment" xml:space="preserve">
+    <value>Środowisko</value>
+  </data>
+  <data name="Find" xml:space="preserve">
+    <value>Znajdź</value>
+  </data>
+  <data name="Fish" xml:space="preserve">
+    <value>Ryba</value>
+  </data>
+  <data name="FishList" xml:space="preserve">
+    <value>Rybopedia</value>
+  </data>
+  <data name="FishName" xml:space="preserve">
+    <value>Nazwa ryby</value>
+  </data>
+  <data name="FishTank" xml:space="preserve">
+    <value>Zbiornik</value>
+  </data>
+  <data name="FishyBusinessWarehouse" xml:space="preserve">
+    <value>Magazyn Fishy Business</value>
+  </data>
+  <data name="Habitat" xml:space="preserve">
+    <value>Środowisko Ryby</value>
+  </data>
+  <data name="Length" xml:space="preserve">
+    <value>Długość</value>
+  </data>
+  <data name="Options" xml:space="preserve">
+    <value>Opcje</value>
+  </data>
+  <data name="Price" xml:space="preserve">
+    <value>Cena</value>
+  </data>
+  <data name="Quantity" xml:space="preserve">
+    <value>Ilość</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>Zapisz</value>
+  </data>
+  <data name="SearchName" xml:space="preserve">
+    <value>Wyszukaj nazwę</value>
+  </data>
+  <data name="SortingPrice" xml:space="preserve">
+    <value>Sortowanie ceny</value>
+  </data>
+  <data name="Species" xml:space="preserve">
+    <value>Gatunek</value>
+  </data>
+  <data name="StockValue" xml:space="preserve">
+    <value>Cena jdn.</value>
+  </data>
+  <data name="TotalValue" xml:space="preserve">
+    <value>Łącznie</value>
+  </data>
+  <data name="Weigth" xml:space="preserve">
+    <value>Waga</value>
   </data>
 </root>

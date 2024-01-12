@@ -117,7 +117,94 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Welcome" xml:space="preserve">
-    <value>Willkomen 2</value>
+  <data name="A" xml:space="preserve">
+    <value>a</value>
+  </data>
+  <data name="BacktoList" xml:space="preserve">
+    <value>Zurück zur Liste</value>
+  </data>
+  <data name="Create" xml:space="preserve">
+    <value>Erstellen</value>
+  </data>
+  <data name="data-val-length-FishDescription" xml:space="preserve">
+    <value>Die Fischbeschreibung muss zwischen 3 und 60 Zeichen lang sein!</value>
+  </data>
+  <data name="data-val-length-FishName" xml:space="preserve">
+    <value>Der Vorname muss zwischen 3 und 60 Zeichen lang sein!</value>
+  </data>
+  <data name="data-val-required-FishDescription" xml:space="preserve">
+    <value>Das Feld für die Fischbeschreibung ist erforderlich!</value>
+  </data>
+  <data name="data-val-required-FishName" xml:space="preserve">
+    <value>Das Vorname-Feld ist erforderlich!</value>
+  </data>
+  <data name="Delete" xml:space="preserve">
+    <value>Löschen</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>Beschreibung</value>
+  </data>
+  <data name="Edit" xml:space="preserve">
+    <value>Bearbeiten</value>
+  </data>
+  <data name="Environment" xml:space="preserve">
+    <value>Umgebung</value>
+  </data>
+  <data name="Find" xml:space="preserve">
+    <value>Finden</value>
+  </data>
+  <data name="Fish" xml:space="preserve">
+    <value>Fisch</value>
+  </data>
+  <data name="FishDescription" xml:space="preserve">
+    <value>Fischbeschreibung</value>
+  </data>
+  <data name="FishList" xml:space="preserve">
+    <value>Fischlexikon</value>
+  </data>
+  <data name="FishName" xml:space="preserve">
+    <value>Fischnamen</value>
+  </data>
+  <data name="FishTank" xml:space="preserve">
+    <value>Aquarium</value>
+  </data>
+  <data name="FishyBusinessWarehouse" xml:space="preserve">
+    <value>Fishy Business Warenlager</value>
+  </data>
+  <data name="Habitat" xml:space="preserve">
+    <value>Lebensraum</value>
+  </data>
+  <data name="Length" xml:space="preserve">
+    <value>Länge</value>
+  </data>
+  <data name="Options" xml:space="preserve">
+    <value>Optionen</value>
+  </data>
+  <data name="Price" xml:space="preserve">
+    <value>Preis</value>
+  </data>
+  <data name="Quantity" xml:space="preserve">
+    <value>Menge</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>Speichern</value>
+  </data>
+  <data name="SearchName" xml:space="preserve">
+    <value>Suchname</value>
+  </data>
+  <data name="SortingPrice" xml:space="preserve">
+    <value>Sortieren nach Preis</value>
+  </data>
+  <data name="Species" xml:space="preserve">
+    <value>Art</value>
+  </data>
+  <data name="StockValue" xml:space="preserve">
+    <value>Bestandswert</value>
+  </data>
+  <data name="TotalValue" xml:space="preserve">
+    <value>Gesamtwert</value>
+  </data>
+  <data name="Weigth" xml:space="preserve">
+    <value>Gewicht</value>
   </data>
 </root>

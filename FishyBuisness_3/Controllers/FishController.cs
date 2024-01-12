@@ -84,9 +84,7 @@ namespace FishyBuisness_3.Controllers
             return View();
         }
 
-        // POST: Fish/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("FishId,FishName,FishDescription,Spieces,Habitat,EnvironmentId,Lenght,Weight,Price")] Fish fish)
@@ -101,7 +99,7 @@ namespace FishyBuisness_3.Controllers
             return View(fish);
         }
 
-        // GET: Fish/Edit/5
+        // GET: Fish/Edit
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -118,9 +116,7 @@ namespace FishyBuisness_3.Controllers
             return View(fish);
         }
 
-        // POST: Fish/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        // POST: Fish/Edit
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("FishId,FishName,FishDescription,Spieces,Habitat,EnvironmentId,Lenght,Weight,Price")] Fish fish)
@@ -154,7 +150,7 @@ namespace FishyBuisness_3.Controllers
             return View(fish);
         }
 
-        // GET: Fish/Delete/5
+        // GET: Fish/Delete
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -173,7 +169,7 @@ namespace FishyBuisness_3.Controllers
             return View(fish);
         }
 
-        // POST: Fish/Delete/5
+        // POST: Fish/Delete
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
